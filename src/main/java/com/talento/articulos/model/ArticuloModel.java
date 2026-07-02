@@ -9,7 +9,7 @@ import jakarta.persistence.Column;
 
 
 @Entity
-@Table(name = "articulo")
+@Table(name = "articulos")
 public class ArticuloModel {
     
     @Id
@@ -23,18 +23,15 @@ public class ArticuloModel {
     @Column(name = "precio", nullable = false)
     private Double precio;
 
-    @Column(name = "imagen", nullable = true, length = 500)
-    private String imagen;
 
     public ArticuloModel(){
 
     }
 
-    public ArticuloModel(Long id, String nombre, Double precio, String imagen){
+    public ArticuloModel(Long id, String nombre, Double precio){
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-        this.imagen = imagen;
     }
 
     public Long getId(){
@@ -61,11 +58,4 @@ public class ArticuloModel {
         this.precio = precio;
     }
 
-    public String getImagen(){
-        return imagen;
-    }
-
-    public void setImagen(String imagen){
-        this.imagen = imagen;
-    }
 }
