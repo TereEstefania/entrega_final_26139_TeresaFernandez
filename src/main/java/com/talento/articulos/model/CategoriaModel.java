@@ -12,6 +12,8 @@ import jakarta.persistence.Column;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "categorias")
 public class CategoriaModel {
@@ -25,7 +27,8 @@ public class CategoriaModel {
     private String nombre;
     
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ArticuloModel> articulos = new ArrayList<>();
+    @JsonIgnoreProperties("categoria")
+    private List<ArticuloModel> articulos;
 
 //Acordarse que se esta obligado a crear el constructor por defecto
     public CategoriaModel(){

@@ -1,6 +1,7 @@
 package com.talento.articulos.service;
 
 import com.talento.articulos.model.ArticuloModel;
+import com.talento.articulos.model.CategoriaModel;
 import com.talento.articulos.repository.ArticuloRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class ArticuloServiceImpl implements ArticuloService{
     }
 
     @Override
-    public ArticuloModel guardarArticulo(ArticuloModel articulo){
+    public ArticuloModel guardarArticulo(ArticuloModel articulo, CategoriaModel categoria){
         return articuloRepository.save(articulo);
     }
 

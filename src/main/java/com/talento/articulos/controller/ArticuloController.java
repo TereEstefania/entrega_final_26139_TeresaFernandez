@@ -1,6 +1,7 @@
 package com.talento.articulos.controller;
 
 import com.talento.articulos.model.ArticuloModel;
+import com.talento.articulos.model.CategoriaModel;
 import com.talento.articulos.service.ArticuloService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,8 +32,8 @@ public class ArticuloController {
     }
 
     @PostMapping
-    public ArticuloModel crear(@RequestBody ArticuloModel articulo){
-        return articuloService.guardarArticulo(articulo);
+    public ArticuloModel crear(@RequestBody ArticuloModel articulo, CategoriaModel categoria){
+        return articuloService.guardarArticulo(articulo, categoria);
     }
 
     @PutMapping("/{id}")
