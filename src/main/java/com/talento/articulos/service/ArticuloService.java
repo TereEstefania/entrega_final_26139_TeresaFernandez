@@ -22,9 +22,5 @@ public interface ArticuloService {
     //elimina un articulo por su id
     void eliminarArticulo(Long id);
 
-    //=======================================
-    // metodos de busqueda con filtros
-    //=======================================
-
-
+  
 }
